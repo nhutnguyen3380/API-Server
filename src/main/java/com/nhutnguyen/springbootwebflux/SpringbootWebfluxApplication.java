@@ -23,7 +23,6 @@ public class SpringbootWebfluxApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		List<Item> items = itemRepo.findAll();
-
 		items.forEach(System.out :: println);
 	}
 }
