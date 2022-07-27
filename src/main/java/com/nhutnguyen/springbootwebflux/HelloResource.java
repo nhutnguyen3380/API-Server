@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloResource {
-
+    //login feature
     @GetMapping("/hello")
     public String hello()
     {
