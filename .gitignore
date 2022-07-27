@@ -48,8 +48,6 @@ Thumbs.db
 *.mov
 *.wmv
 
-<<<<<<< HEAD
-=======
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
