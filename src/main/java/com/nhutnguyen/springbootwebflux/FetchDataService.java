@@ -8,14 +8,15 @@
 
 package com.nhutnguyen.springbootwebflux;
 
-import org.junit.jupiter.api.Test;
-import reactor.core.publisher.Mono;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public class MonoFluxTest {
-    @Test
-    public void testMono()
-    {
-        Mono<String> monoString = Mono.just("This is a test").log();
-        monoString.subscribe(System.out::println);
-    }
+import java.util.List;
+
+@Repository
+public interface FetchDataService extends JpaRepository<ProductsList, String> {
+
+    @Override
+    List<ProductsList> findAll();
+
 }

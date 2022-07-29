@@ -8,11 +8,15 @@
 
 package com.nhutnguyen.springbootwebflux;
 
+import com.nhutnguyen.springbootwebflux.dto.Product;
 import com.nhutnguyen.springbootwebflux.models.AuthenticationRequest;
 import com.nhutnguyen.springbootwebflux.models.AuthenticationResponse;
+import com.nhutnguyen.springbootwebflux.services.ProductService;
 import org.apache.coyote.Response;
+import org.hibernate.annotations.Fetch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -21,6 +25,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 
 @RestController
@@ -32,12 +40,35 @@ public class HelloResource {
     private UserDetailsService userDetailsService;
 
     @Autowired
+    private ProductService productService;
+
+    @Autowired
     private JwtUtil jwtTokenUtil;
+
+    @Autowired
+    private FetchDataService fetchDataService;
 
     @RequestMapping("/hello")
     public String hello()
     {
         return "Hello World!";
+    }
+
+    @GetMapping("/products")
+    public List<Product> getAllProducts()
+    {
+        return productService.loadAllProducts();
+    }
+
+    @GetMapping(value = "/products/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Product> getAllProductsStream()
+    {
+        return productService.loadAllProductsStream();
+    }
+    @GetMapping("/getdata")
+    public List<ProductsList> getProductsList()
+    {
+        return fetchDataService.findAll();
     }
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)

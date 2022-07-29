@@ -12,12 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
 
 @SpringBootApplication
-public class SpringbootWebfluxApplication
+public class SpringbootWebfluxApplication implements CommandLineRunner
 	{
 		@Autowired
 		private ItemRepository itemRepo;
@@ -25,9 +27,14 @@ public class SpringbootWebfluxApplication
 		SpringApplication.run(SpringbootWebfluxApplication.class, args);
 	}
 	//request feature now
-//	@Override
-//	public void run(String... args) throws Exception {
+	@Override
+	public void run(String... args) throws Exception {
 //		List<Item> items = itemRepo.findAll();
 //		items.forEach(System.out :: println);
-//	}
+//		Mono<String> monoString = Mono.just("This is a test").log();
+//		monoString.subscribe(System.out::println);
+//
+//		Flux<String> fluxString = Flux.just("Dog", "Cat", "LUL").log();
+//		fluxString.subscribe(System.out::println);
+	}
 }
