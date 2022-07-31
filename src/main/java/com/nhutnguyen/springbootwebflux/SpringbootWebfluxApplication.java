@@ -23,6 +23,8 @@ public class SpringbootWebfluxApplication implements CommandLineRunner
 	{
 		@Autowired
 		private ItemRepository itemRepo;
+		@Autowired
+		private FetchDataService fetchDataService;
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootWebfluxApplication.class, args);
 	}
@@ -36,5 +38,9 @@ public class SpringbootWebfluxApplication implements CommandLineRunner
 //
 //		Flux<String> fluxString = Flux.just("Dog", "Cat", "LUL").log();
 //		fluxString.subscribe(System.out::println);
+
+//		List<ProductsList> productsLists = fetchDataService.findAll();
+//		productsLists.forEach(System.out::println);
+
 	}
 }

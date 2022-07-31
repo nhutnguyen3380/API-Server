@@ -16,7 +16,4 @@ import java.util.List;
 @Repository
 public interface FetchDataService extends JpaRepository<ProductsList, String> {
 
-    @Override
-    List<ProductsList> findAll();
-
 }
