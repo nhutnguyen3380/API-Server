@@ -8,9 +8,7 @@
 
 package com.nhutnguyen.springbootwebflux.models;
 
-import java.io.Serializable;
-
-public class AuthenticationRequest implements Serializable {
+public class AuthenticationRequest {
     private String username;
     private String password;
 

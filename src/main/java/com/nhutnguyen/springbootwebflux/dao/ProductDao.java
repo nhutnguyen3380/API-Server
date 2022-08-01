@@ -31,7 +31,7 @@ public class ProductDao {
     public Flux<Product> getProductStream()
     {
         return Flux.range(1,50)
-                .delayElements(Duration.ofSeconds(1))
+                //.delayElements(Duration.ofSeconds(1))
                 .doOnNext(i->System.out.println("Processing count: " + i))
                 .map(i -> new Product(i, "product" + i));
     }

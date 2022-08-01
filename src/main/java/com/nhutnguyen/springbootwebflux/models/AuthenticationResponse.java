@@ -10,7 +10,7 @@ package com.nhutnguyen.springbootwebflux.models;
 
 import java.io.Serializable;
 
-public class AuthenticationResponse implements Serializable {
+public class AuthenticationResponse {
     private final String jwt;
 
     public AuthenticationResponse(String jwt)
