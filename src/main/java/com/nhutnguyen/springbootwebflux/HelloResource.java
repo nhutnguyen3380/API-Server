@@ -54,22 +54,6 @@ public class HelloResource {
         return "Hello World!";
     }
 
-    @GetMapping("/products")
-    public List<Product> getAllProducts()
-    {
-        return productService.loadAllProducts();
-    }
-
-    @GetMapping(value = "/products/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<Product> getAllProductsStream()
-    {
-        return productService.loadAllProductsStream();
-    }
-    @GetMapping("/getdata")
-    public List<ProductsList> getProductsList()
-    {
-        return fetchDataService.findAll();
-    }
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
@@ -87,4 +71,22 @@ public class HelloResource {
 
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
     }
+
+    @GetMapping("/products")
+    public List<Product> getAllProducts()
+    {
+        return productService.loadAllProducts();
+    }
+
+    @GetMapping(value = "/products/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Product> getAllProductsStream()
+    {
+        return productService.loadAllProductsStream();
+    }
+    @GetMapping("/getdata")
+    public List<ProductsList> getProductsList()
+    {
+        return fetchDataService.findAll();
+    }
+
 }
