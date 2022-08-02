@@ -9,14 +9,12 @@
 package com.nhutnguyen.springbootwebflux.services;
 
 import com.nhutnguyen.springbootwebflux.dao.ProductDao;
-import com.nhutnguyen.springbootwebflux.dto.Product;
+import com.nhutnguyen.springbootwebflux.Entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 import java.util.List;
-
-import static java.lang.System.currentTimeMillis;
 
 @Service
 public class ProductService {

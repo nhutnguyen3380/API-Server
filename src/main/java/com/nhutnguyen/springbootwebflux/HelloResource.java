@@ -8,14 +8,13 @@
 
 package com.nhutnguyen.springbootwebflux;
 
-import com.nhutnguyen.springbootwebflux.dto.Product;
+import com.nhutnguyen.springbootwebflux.Entity.Product;
+import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
+import com.nhutnguyen.springbootwebflux.Entity.WhiteLabelList;
 import com.nhutnguyen.springbootwebflux.models.AuthenticationRequest;
 import com.nhutnguyen.springbootwebflux.models.AuthenticationResponse;
 import com.nhutnguyen.springbootwebflux.services.ProductService;
-import org.apache.coyote.Response;
-import org.hibernate.annotations.Fetch;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,10 +22,8 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import java.util.List;
 
@@ -47,6 +44,9 @@ public class HelloResource {
 
     @Autowired
     private FetchDataService fetchDataService;
+
+    @Autowired
+    private WhiteLabelFetchDataService whiteLabelFetchDataService;
 
     @RequestMapping("/hello")
     public String hello()
@@ -88,5 +88,17 @@ public class HelloResource {
     {
         return fetchDataService.findAll();
     }
+    @GetMapping("/whitelabel")
+    public List<WhiteLabelList> getWhiteLabelList()
+    {
+        return whiteLabelFetchDataService.findAll();
+    }
+//    @GetMapping(value = "/getdata/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+//    public Flux<ProductsList> getProductsListStream()
+//    {
+//        return ""
+//
+//    }
+
 
 }

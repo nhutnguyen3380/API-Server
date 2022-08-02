@@ -6,20 +6,21 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux;
+package com.nhutnguyen.springbootwebflux.Entity;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "TB_ITEM")
+//@SecondaryTable(name = "TB_CMMNCODE")
 public class ProductsList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ITEM_NO")
     String ITEM_NO;
 
-//    @Column(name = "CD_NM")
-//    String CD_NM;
+   // @Column(name = "CD_NM")
+    //String CD_NM;
 
     @Column(name = "POWER_CLS_CD")
     String POWER_CLS_CD;

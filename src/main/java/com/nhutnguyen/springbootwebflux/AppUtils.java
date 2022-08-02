@@ -6,18 +6,16 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.dto;
+package com.nhutnguyen.springbootwebflux;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.databind.util.BeanUtil;
+import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
+import com.nhutnguyen.springbootwebflux.dto.ProductDto;
+import org.springframework.beans.BeanUtils;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Product {
+public class AppUtils {
 
-    private int id;
-    private String name;
+
+
 
 }

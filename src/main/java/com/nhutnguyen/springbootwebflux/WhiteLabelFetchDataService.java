@@ -8,11 +8,10 @@
 
 package com.nhutnguyen.springbootwebflux;
 
-import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
+import com.nhutnguyen.springbootwebflux.Entity.WhiteLabelList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FetchDataService extends JpaRepository<ProductsList, String> {
-
+public interface WhiteLabelFetchDataService extends JpaRepository <WhiteLabelList, String> {
 }

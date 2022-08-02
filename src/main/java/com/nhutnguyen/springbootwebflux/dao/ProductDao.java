@@ -8,11 +8,11 @@
 
 package com.nhutnguyen.springbootwebflux.dao;
 
-import com.nhutnguyen.springbootwebflux.dto.Product;
+import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
+import com.nhutnguyen.springbootwebflux.Entity.Product;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -35,4 +35,8 @@ public class ProductDao {
                 .doOnNext(i->System.out.println("Processing count: " + i))
                 .map(i -> new Product(i, "product" + i));
     }
+
+
+
+
 }

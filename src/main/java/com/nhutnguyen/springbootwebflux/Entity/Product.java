@@ -6,13 +6,18 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux;
+package com.nhutnguyen.springbootwebflux.Entity;
 
-import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Repository
-public interface FetchDataService extends JpaRepository<ProductsList, String> {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Product {
+
+    private int id;
+    private String name;
 
 }

@@ -6,13 +6,14 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux;
+package com.nhutnguyen.springbootwebflux.services;
 
-import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import com.nhutnguyen.springbootwebflux.dao.WhiteLabelDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-@Repository
-public interface FetchDataService extends JpaRepository<ProductsList, String> {
+@Service
+public class WhiteLabelService
+{
 
 }
