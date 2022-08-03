@@ -12,10 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
-import java.util.List;
 
 
 @SpringBootApplication
@@ -24,7 +20,7 @@ public class SpringbootWebfluxApplication implements CommandLineRunner
 		@Autowired
 		private ItemRepository itemRepo;
 		@Autowired
-		private FetchDataService fetchDataService;
+		private ProductRepository productRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootWebfluxApplication.class, args);
 	}

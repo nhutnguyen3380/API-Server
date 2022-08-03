@@ -10,9 +10,10 @@ package com.nhutnguyen.springbootwebflux;
 
 import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FetchDataService extends JpaRepository<ProductsList, String> {
+public interface ProductRepository extends JpaRepository<ProductsList, String> {
 
 }

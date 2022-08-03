@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @RestController
@@ -44,7 +43,10 @@ public class HelloResource {
     private JwtUtil jwtTokenUtil;
 
     @Autowired
-    private FetchDataService fetchDataService;
+    private ItemRepository itemRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
 
     @Autowired
     private WhiteLabelFetchDataService whiteLabelFetchDataService;
@@ -87,7 +89,7 @@ public class HelloResource {
     @GetMapping("/getdata")
     public List<ProductsList> getProductsList()
     {
-        return fetchDataService.findAll();
+        return productRepository.findAll();
 
     }
     @GetMapping("/whitelabel")
@@ -95,12 +97,12 @@ public class HelloResource {
     {
         return whiteLabelFetchDataService.findAll();
     }
-//    @GetMapping(value = "/getdata/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-//    public Flux<ProductsList> getProductsListStream()
-//    {
-//        return ""
-//
-//    }
+    @GetMapping(value = "/getdata/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public List<ProductsList> getProductsListStream()
+    {
+        return productService.getProductsList();
+
+    }
 
 
 }
