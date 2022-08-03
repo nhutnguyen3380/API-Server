@@ -8,6 +8,7 @@
 
 package com.nhutnguyen.springbootwebflux.services;
 
+import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
 import com.nhutnguyen.springbootwebflux.dao.ProductDao;
 import com.nhutnguyen.springbootwebflux.Entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,11 @@ public class ProductService {
         long end = System.currentTimeMillis();
         System.out.println("Total execution time: " + (end-start));
         return products;
+    }
+
+    public Flux<ProductsList> loadProductsListStream()
+    {
+
     }
 
 }

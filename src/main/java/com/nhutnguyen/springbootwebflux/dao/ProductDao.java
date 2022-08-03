@@ -36,6 +36,11 @@ public class ProductDao {
                 .map(i -> new Product(i, "product" + i));
     }
 
+    public Flux<ProductsList> getProductsListStream()
+    {
+
+    }
+
 
 
 
