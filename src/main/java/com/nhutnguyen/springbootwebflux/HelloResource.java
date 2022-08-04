@@ -36,6 +36,7 @@ public class HelloResource {
     @Autowired
     private UserDetailsService userDetailsService;
 
+
     @Autowired
     private ProductService productService;
 

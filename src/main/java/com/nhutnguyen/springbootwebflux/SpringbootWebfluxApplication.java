@@ -17,10 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringbootWebfluxApplication implements CommandLineRunner
 	{
-		@Autowired
-		private ItemRepository itemRepo;
-		@Autowired
-		private ProductRepository productRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootWebfluxApplication.class, args);
 	}
