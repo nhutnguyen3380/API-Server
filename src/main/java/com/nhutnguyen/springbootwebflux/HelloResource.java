@@ -87,7 +87,7 @@ public class HelloResource {
     {
         return productService.loadAllProductsStream();
     }
-    @GetMapping("/getdata")
+    @GetMapping("/productslist")
     public List<ProductsList> getProductsList()
     {
         return productRepository.findAll();
@@ -104,6 +104,21 @@ public class HelloResource {
         return productService.getProductsList();
 
     }
+    @RequestMapping(path="/allProductsList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public List<ProductsList> findAllProductsList()
+    {
+        return productRepository.findAllProductsList();
+    }
+    @RequestMapping(path="/allWhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public List<WhiteLabelList> findAllWhiteLabelList()
+    {
+        return whiteLabelFetchDataService.findAllWhiteLabelList();
+    }
+
+
+
+
+
 
 
 }

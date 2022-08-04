@@ -22,6 +22,6 @@ import java.util.stream.Stream;
 public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        return new User("foo", "foo", new ArrayList<>());
+        return new User("ATP", "ATP_Password", new ArrayList<>());
     }
 }
