@@ -17,95 +17,104 @@ public class ProductsList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ITEM_NO")
-    String ITEM_NO;
-
-   // @Column(name = "CD_NM")
-    //String CD_NM;
+    String ItemCode;
+//
+    @Column(name = "CD_NM")
+    String Final_Product_Type;
 
     @Column(name = "POWER_CLS_CD")
-    String POWER_CLS_CD;
+    String U_Wattage;
 
     @Column(name = "ACTIVE_YN")
-    String ACTIVE_YN;
+    String Active;
 
     @Column(name = "ZMD0103")
-    String ZMD0103;
+    String Plant_Description;
 
     @Column(name = "ZMD0105")
-    String ZMD0105;
+    String Grp1_Description;
 
     @Column(name = "ZMD0106")
-    String ZMD0106;
+    String Grp2_Description;
 
     @Column(name = "DETAIL_NAME")
-    String DETAIL_NAME;
+    String Grp3_Description;
 
-    public String getITEM_NO() {
-        return ITEM_NO;
+    public String getItemCode() {
+        return ItemCode;
     }
 
-    public String getPOWER_CLS_CD() {
-        return POWER_CLS_CD;
+
+    public String getFinal_Product_Type() {
+        return Final_Product_Type;
     }
 
-    public String getACTIVE_YN() {
-        return ACTIVE_YN;
+    public String getU_Wattage() {
+        return U_Wattage;
     }
 
-    public String getZMD0103() {
-        return ZMD0103;
+    public String getActive() {
+        return Active;
     }
 
-    public String getZMD0105() {
-        return ZMD0105;
+    public String getPlant_Description() {
+        return Plant_Description;
     }
 
-    public String getZMD0106() {
-        return ZMD0106;
+    public String getGrp1_Description() {
+        return Grp1_Description;
     }
 
-    public String getDETAIL_NAME() {
-        return DETAIL_NAME;
+    public String getGrp2_Description() {
+        return Grp2_Description;
     }
 
-    public void setITEM_NO(String ITEM_NO) {
-        this.ITEM_NO = ITEM_NO;
+    public String getGrp3_Description() {
+        return Grp3_Description;
     }
 
-    public void setPOWER_CLS_CD(String POWER_CLS_CD) {
-        this.POWER_CLS_CD = POWER_CLS_CD;
+    public void setItemCode(String ItemCode) {
+        this.ItemCode = ItemCode;
     }
 
-    public void setACTIVE_YN(String ACTIVE_YN) {
-        this.ACTIVE_YN = ACTIVE_YN;
+    public void setFinal_Product_Type(String final_Product_Type) {
+        Final_Product_Type = final_Product_Type;
     }
 
-    public void setZMD0103(String ZMD0103) {
-        this.ZMD0103 = ZMD0103;
+    public void setU_Wattage(String U_Wattage) {
+        this.U_Wattage = U_Wattage;
     }
 
-    public void setZMD0105(String ZMD0105) {
-        this.ZMD0105 = ZMD0105;
+    public void setActive(String Active) {
+        this.Active = Active;
     }
 
-    public void setZMD0106(String ZMD0106) {
-        this.ZMD0106 = ZMD0106;
+    public void setPlant_Description(String Plant_Description) {
+        this.Plant_Description = Plant_Description;
     }
 
-    public void setDETAIL_NAME(String DETAIL_NAME) {
-        this.DETAIL_NAME = DETAIL_NAME;
+    public void setGrp1_Description(String Grp1_Description) {
+        this.Grp1_Description = Grp1_Description;
+    }
+
+    public void setGrp2_Description(String Grp2_Description) {
+        this.Grp2_Description = Grp2_Description;
+    }
+
+    public void setGrp3_Description(String Grp3_Description) {
+        this.Grp3_Description = Grp3_Description;
     }
 
     @Override
     public String toString() {
         return "ProductsList{" +
-                "ItemCode='" + ITEM_NO + '\'' +
-                ", U_Wattage='" + POWER_CLS_CD + '\'' +
-                ", Active='" + ACTIVE_YN + '\'' +
-                ", Plant Description='" + ZMD0103 + '\'' +
-                ", Grp1. Description='" + ZMD0105 + '\'' +
-                ", Grp2. Description='" + ZMD0106 + '\'' +
-                ", Grp3. Description='" + DETAIL_NAME + '\'' +
+                "ItemCode='" + ItemCode + '\'' +
+                ", U_Wattage='" + U_Wattage + '\'' +
+                ", Active='" + Active + '\'' +
+                ", Plant Description='" + Plant_Description + '\'' +
+                ", Grp1. Description='" + Grp1_Description + '\'' +
+                ", Grp2. Description='" + Grp2_Description + '\'' +
+                ", Grp3. Description='" + Grp3_Description + '\'' +
                 '}';
     }
 }
