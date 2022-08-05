@@ -6,16 +6,12 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux;
+package com.nhutnguyen.springbootwebflux.repository;
 
-import com.fasterxml.jackson.databind.util.BeanUtil;
-import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
-import com.nhutnguyen.springbootwebflux.dto.ProductDto;
-import org.springframework.beans.BeanUtils;
+import com.nhutnguyen.springbootwebflux.Entity.Item;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public class AppUtils {
-
-
-
-
+@Repository
+public interface ItemRepository extends JpaRepository<Item,Long> {
 }

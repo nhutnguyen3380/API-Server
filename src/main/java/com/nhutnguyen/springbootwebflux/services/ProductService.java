@@ -9,7 +9,7 @@
 package com.nhutnguyen.springbootwebflux.services;
 
 import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
-import com.nhutnguyen.springbootwebflux.ProductRepository;
+import com.nhutnguyen.springbootwebflux.repository.ProductRepository;
 import com.nhutnguyen.springbootwebflux.dao.ProductDao;
 import com.nhutnguyen.springbootwebflux.Entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -6,9 +6,8 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux;
+package com.nhutnguyen.springbootwebflux.repository;
 
-import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
 import com.nhutnguyen.springbootwebflux.Entity.WhiteLabelList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -17,7 +16,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface WhiteLabelFetchDataService extends JpaRepository <WhiteLabelList, String>
+public interface WhiteLabelRepository extends JpaRepository <WhiteLabelList, String>
 {
     @Override
     List<WhiteLabelList> findAll();

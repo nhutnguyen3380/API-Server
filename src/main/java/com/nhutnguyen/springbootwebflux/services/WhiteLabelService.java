@@ -8,8 +8,6 @@
 
 package com.nhutnguyen.springbootwebflux.services;
 
-import com.nhutnguyen.springbootwebflux.dao.WhiteLabelDao;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service

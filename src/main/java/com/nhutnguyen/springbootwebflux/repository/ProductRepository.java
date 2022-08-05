@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux;
+package com.nhutnguyen.springbootwebflux.repository;
 
 import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
 import org.springframework.data.jpa.repository.JpaRepository;

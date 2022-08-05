@@ -6,11 +6,15 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux;
+package com.nhutnguyen.springbootwebflux.controller;
 
 import com.nhutnguyen.springbootwebflux.Entity.Product;
 import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
 import com.nhutnguyen.springbootwebflux.Entity.WhiteLabelList;
+import com.nhutnguyen.springbootwebflux.repository.ItemRepository;
+import com.nhutnguyen.springbootwebflux.JwtUtil;
+import com.nhutnguyen.springbootwebflux.repository.ProductRepository;
+import com.nhutnguyen.springbootwebflux.repository.WhiteLabelRepository;
 import com.nhutnguyen.springbootwebflux.models.AuthenticationRequest;
 import com.nhutnguyen.springbootwebflux.models.AuthenticationResponse;
 import com.nhutnguyen.springbootwebflux.services.ProductService;
@@ -29,7 +33,7 @@ import java.util.List;
 
 
 @RestController
-public class HelloResource {
+public class Controller {
     //login feature
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -50,7 +54,7 @@ public class HelloResource {
     private ProductRepository productRepository;
 
     @Autowired
-    private WhiteLabelFetchDataService whiteLabelFetchDataService;
+    private WhiteLabelRepository whiteLabelRepository;
 
     @RequestMapping("/hello")
     public String hello()
@@ -96,7 +100,7 @@ public class HelloResource {
     @GetMapping("/whitelabel")
     public List<WhiteLabelList> getWhiteLabelList()
     {
-        return whiteLabelFetchDataService.findAll();
+        return whiteLabelRepository.findAll();
     }
     @GetMapping(value = "/getdata/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public List<ProductsList> getProductsListStream()
@@ -112,7 +116,7 @@ public class HelloResource {
     @RequestMapping(path="/allWhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public List<WhiteLabelList> findAllWhiteLabelList()
     {
-        return whiteLabelFetchDataService.findAllWhiteLabelList();
+        return whiteLabelRepository.findAllWhiteLabelList();
     }
 
 
