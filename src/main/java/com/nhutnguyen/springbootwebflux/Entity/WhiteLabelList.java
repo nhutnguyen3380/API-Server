@@ -18,80 +18,80 @@ public class WhiteLabelList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "CD_VAL3")
-    String CD_VAL3;
+    String WH_Location;
 
     @Column(name = "CD_NM")
-    String CD_NM;
+    String WH_3PL_Name;
 
     @Column(name = "CD_VAL3", insertable = false, updatable = false)
-    String CD_VAL30;
+    String SAP_WH_Location_Group;
 
     @Column(name = "COMM_CD")
-    String COMM_CD;
+    String SAP_WH_Location_Code;
 
     @Column(name = "CD_NM", insertable = false, updatable = false)
-    String CD_NM0;
+    String SAP_3PL_WH_Name;
 
     @Column(name = "CD_VAL")
-    String CD_VAL;
+    String UseYN;
 
-    public String getCD_VAL3() {
-        return CD_VAL3;
+    public String getWH_Location() {
+        return WH_Location;
     }
 
-    public String getCD_NM() {
-        return CD_NM;
+    public String getWH_3PL_Name() {
+        return WH_3PL_Name;
     }
 
-    public String getCD_VAL30() {
-        return CD_VAL30;
+    public String getSAP_WH_Location_Group() {
+        return SAP_WH_Location_Group;
     }
 
-    public String getCOMM_CD() {
-        return COMM_CD;
+    public String getSAP_WH_Location_Code() {
+        return SAP_WH_Location_Code;
     }
 
-    public String getCD_NM0() {
-        return CD_NM0;
+    public String getSAP_3PL_WH_Name() {
+        return SAP_3PL_WH_Name;
     }
 
-    public String getCD_VAL() {
-        return CD_VAL;
+    public String getUseYN() {
+        return UseYN;
     }
 
-    public void setCD_VAL3(String CD_VAL3) {
-        this.CD_VAL3 = CD_VAL3;
+    public void setWH_Location(String WH_Location) {
+        this.WH_Location = WH_Location;
     }
 
-    public void setCD_NM(String CD_NM) {
-        this.CD_NM = CD_NM;
+    public void setWH_3PL_Name(String WH_3PL_Name) {
+        this.WH_3PL_Name = WH_3PL_Name;
     }
 
-    public void setCD_VAL30(String CD_VAL30) {
-        this.CD_VAL30 = CD_VAL30;
+    public void setSAP_WH_Location_Group(String CD_VAL30) {
+        this.SAP_WH_Location_Group = CD_VAL30;
     }
 
-    public void setCOMM_CD(String COMM_CD) {
-        this.COMM_CD = COMM_CD;
+    public void setSAP_WH_Location_Code(String SAP_WH_Location_Code) {
+        this.SAP_WH_Location_Code = SAP_WH_Location_Code;
     }
 
-    public void setCD_NM0(String CD_NM0) {
-        this.CD_NM0 = CD_NM0;
+    public void setSAP_3PL_WH_Name(String SAP_3PL_WH_Name) {
+        this.SAP_3PL_WH_Name = SAP_3PL_WH_Name;
     }
 
-    public void setCD_VAL(String CD_VAL) {
-        this.CD_VAL = CD_VAL;
+    public void setUseYN(String UseYN) {
+        this.UseYN = UseYN;
     }
 
     @Override
     public String toString() {
         return "WhiteLabelList{" +
-                "CD_VAL3='" + CD_VAL3 + '\'' +
-                ", CD_NM='" + CD_NM + '\'' +
-                ", CD_VAL30='" + CD_VAL30 + '\'' +
-                ", COMM_CD='" + COMM_CD + '\'' +
-                ", CD_NM0='" + CD_NM0 + '\'' +
-                ", CD_VAL='" + CD_VAL + '\'' +
+                "WH_Location='" + WH_Location + '\'' +
+                ", WH_3PL_Name='" + WH_3PL_Name + '\'' +
+                ", SAP_WH_Location_Group='" + SAP_WH_Location_Group + '\'' +
+                ", SAP_WH_Location_Code='" + SAP_WH_Location_Code + '\'' +
+                ", SAP_3PL_WH_Name='" + SAP_3PL_WH_Name + '\'' +
+                ", UseYN='" + UseYN + '\'' +
                 '}';
     }
 }
