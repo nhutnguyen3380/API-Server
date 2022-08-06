@@ -8,6 +8,7 @@
 
 package com.nhutnguyen.springbootwebflux.services;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -20,8 +21,13 @@ import java.util.stream.Stream;
 
 @Service
 public class MyUserDetailsService implements UserDetailsService {
+
+    @Value("${spring.security.user.name}")
+    private String username;
+    @Value("${spring.security.user.password}")
+    private String password;
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        return new User("ATP", "ATP_Password", new ArrayList<>());
+        return new User(username, password, new ArrayList<>());
     }
 }

@@ -9,17 +9,23 @@
 package com.nhutnguyen.springbootwebflux;
 
 import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
+import com.nhutnguyen.springbootwebflux.Entity.User;
+import com.nhutnguyen.springbootwebflux.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 @SpringBootApplication
 public class SpringbootWebfluxApplication implements CommandLineRunner
 	{
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootWebfluxApplication.class, args);

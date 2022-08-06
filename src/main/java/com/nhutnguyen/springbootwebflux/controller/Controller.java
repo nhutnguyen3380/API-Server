@@ -119,10 +119,10 @@ public class Controller {
         return whiteLabelRepository.findAllWhiteLabelList();
     }
 
-
-
-
-
-
+    @RequestMapping(path="/findProductsListByItemCode/{ITEM_NO}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public List<ProductsList> findProductsListByItemCode(@PathVariable String ItemCode)
+    {
+        return productRepository.findProductsListByItemCode(ItemCode);
+    }
 
 }

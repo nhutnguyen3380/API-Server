@@ -12,8 +12,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "TB_ITEM")
-
-//@SecondaryTable(name = "TB_CMMNCODE")
 public class ProductsList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
