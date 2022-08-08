@@ -118,7 +118,7 @@ public class Controller {
     @RequestMapping(path="/allWhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public List<WhiteLabelList> findAllWhiteLabelList()
     {
-        List<WhiteLabelList> wList = whiteLabelRepository.findAll();
+        List<WhiteLabelList> wList = whiteLabelRepository.findAllWhiteLabelList();
         if(wList.isEmpty())
         {
             throw new NoDataFoundException();
