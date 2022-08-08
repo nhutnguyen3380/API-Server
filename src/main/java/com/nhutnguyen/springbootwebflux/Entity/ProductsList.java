@@ -9,6 +9,7 @@
 package com.nhutnguyen.springbootwebflux.Entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TB_ITEM")
@@ -16,27 +17,36 @@ public class ProductsList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ITEM_NO")
+    @NotNull
     String ItemCode;
 //
+
     @Column(name = "CD_NM")
+    @NotNull
     String Final_Product_Type;
 
     @Column(name = "POWER_CLS_CD")
+    @NotNull
     String U_Wattage;
 
     @Column(name = "ACTIVE_YN")
+    @NotNull
     String Active;
 
     @Column(name = "ZMD0103")
+    @NotNull
     String Plant_Description;
 
     @Column(name = "ZMD0105")
+    @NotNull
     String Grp1_Description;
 
     @Column(name = "ZMD0106")
+    @NotNull
     String Grp2_Description;
 
     @Column(name = "DETAIL_NAME")
+    @NotNull
     String Grp3_Description;
 
     public String getItemCode() {

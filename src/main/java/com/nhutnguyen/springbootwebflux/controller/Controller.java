@@ -92,12 +92,10 @@ public class Controller {
     {
         return productService.loadAllProductsStream();
     }
-    @GetMapping("/productslist")
-    public List<ProductsList> getProductsList()
-    {
-        return productRepository.findAll();
 
-    }
+
+
+
     @GetMapping("/whitelabel")
     public List<WhiteLabelList> getWhiteLabelList()
     {
@@ -110,12 +108,12 @@ public class Controller {
 
     }
     @RequestMapping(path="/allProductsList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-    public List<ProductsList> findAllProductsList()
+    public ResponseEntity<List<ProductsList>> findAllProductsList()
     {
-        return productRepository.findAllProductsList();
+        return ResponseEntity.ok(productRepository.findAllProductsList());
     }
     @RequestMapping(path="/allWhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-    public List<WhiteLabelList> findAllWhiteLabelList()
+    public ResponseEntity<List<WhiteLabelList>> findAllWhiteLabelList()
     {
         List<WhiteLabelList> wList = whiteLabelRepository.findAllWhiteLabelList();
         if(wList.isEmpty())
@@ -124,8 +122,14 @@ public class Controller {
         }
         else
         {
-            return wList;
+            return ResponseEntity.ok(wList);
         }
+    }
+    @RequestMapping(path="/productslist", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<List<ProductsList>> findProductsList()
+    {
+        return ResponseEntity.ok(productRepository.findProductsList());
+
     }
 
     @RequestMapping(path="/findProductsListByItemCode/{ITEM_NO}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
