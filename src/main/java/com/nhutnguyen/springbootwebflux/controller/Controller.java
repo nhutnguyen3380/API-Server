@@ -8,9 +8,11 @@
 
 package com.nhutnguyen.springbootwebflux.controller;
 
+import com.nhutnguyen.springbootwebflux.EmptyInputException;
 import com.nhutnguyen.springbootwebflux.Entity.Product;
 import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
 import com.nhutnguyen.springbootwebflux.Entity.WhiteLabelList;
+import com.nhutnguyen.springbootwebflux.NoDataFoundException;
 import com.nhutnguyen.springbootwebflux.repository.ItemRepository;
 import com.nhutnguyen.springbootwebflux.JwtUtil;
 import com.nhutnguyen.springbootwebflux.repository.ProductRepository;
@@ -116,12 +118,21 @@ public class Controller {
     @RequestMapping(path="/allWhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public List<WhiteLabelList> findAllWhiteLabelList()
     {
-        return whiteLabelRepository.findAllWhiteLabelList();
+        List<WhiteLabelList> wList = whiteLabelRepository.findAll();
+        if(wList.isEmpty())
+        {
+            throw new NoDataFoundException();
+        }
+        else
+        {
+            return wList;
+        }
     }
 
     @RequestMapping(path="/findProductsListByItemCode/{ITEM_NO}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public List<ProductsList> findProductsListByItemCode(@PathVariable String ItemCode)
     {
+
         return productRepository.findProductsListByItemCode(ItemCode);
     }
 
