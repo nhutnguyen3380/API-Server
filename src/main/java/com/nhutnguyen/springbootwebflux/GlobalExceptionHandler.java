@@ -22,6 +22,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -77,6 +78,14 @@ public class GlobalExceptionHandler {
             final HttpServletRequest request) {
         return "acceptable data type:" + MediaType.APPLICATION_JSON_VALUE + " or " + MediaType.APPLICATION_XML_VALUE;
     }
+//    @ExceptionHandler(value = AccessDeniedException.class)
+//    public void handleConflict(HttpServletResponse response) throws IOException {
+//        response.sendError(403, "Your Message");
+//    }
+
+
+
+
 
 
 }
