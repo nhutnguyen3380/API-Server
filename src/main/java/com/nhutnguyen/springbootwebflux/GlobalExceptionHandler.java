@@ -16,8 +16,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
+import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -43,45 +45,46 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 
+//    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+//    public ResponseEntity<Map<String, String>> handleException(
+//            HttpRequestMethodNotSupportedException e) throws IOException {
+//        Map<String, String> errorResponse = new HashMap<>();
+//        String provided = e.getMethod();
+//        List<String> supported = Arrays.asList(e.getSupportedMethods());
+//
+//        String error = provided + " is not one of the supported Http Methods (" +
+//                String.join(", ", supported) + ")";
+//        errorResponse.put("error", error);
+//        errorResponse.put("message", e.getLocalizedMessage());
+//        errorResponse.put("status", HttpStatus.METHOD_NOT_ALLOWED.toString());
+//
+//        return new ResponseEntity<>(errorResponse, HttpStatus.METHOD_NOT_ALLOWED);
+//    }
+    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
+    public ResponseEntity<String> handleMediaTypeException(HttpMediaTypeNotAcceptableException httpMediaTypeNotAcceptableException)
+    {
+        return new ResponseEntity<String>("Acceptable data type:" + MediaType.APPLICATION_JSON_VALUE + " or " + MediaType.APPLICATION_XML_VALUE, HttpStatus.NOT_ACCEPTABLE);
+    }
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-    public ResponseEntity<Map<String, String>> handleException(
-            HttpRequestMethodNotSupportedException e) throws IOException {
-        Map<String, String> errorResponse = new HashMap<>();
-        String provided = e.getMethod();
-        List<String> supported = Arrays.asList(e.getSupportedMethods());
-
-        String error = provided + " is not one of the supported Http Methods (" +
-                String.join(", ", supported) + ")";
-        errorResponse.put("error", error);
-        errorResponse.put("message", e.getLocalizedMessage());
-        errorResponse.put("status", HttpStatus.METHOD_NOT_ALLOWED.toString());
-
-        return new ResponseEntity<>(errorResponse, HttpStatus.METHOD_NOT_ALLOWED);
+    public ResponseEntity<String> handleMethodNotSupportedException(HttpRequestMethodNotSupportedException httpRequestMethodNotSupportedException)
+    {
+        return new ResponseEntity<String>("Method not supported", HttpStatus.METHOD_NOT_ALLOWED);
     }
     @ExceptionHandler(AccessDeniedException.class)
-    public ResponseEntity<Map<String, String>> handleException2(
-            HttpRequestMethodNotSupportedException e) throws IOException {
-        Map<String, String> errorResponse = new HashMap<>();
-
-
-        String error = "Access denied";
-        errorResponse.put("error", error);
-
-        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    public ResponseEntity<String> handleAccessDeniedException(AccessDeniedException accessDeniedException)
+    {
+        return new ResponseEntity<String>("Access denied", HttpStatus.UNAUTHORIZED);
     }
 
-    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
-    @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
-    @ResponseBody
-    public String handleMediaTypeNotAcceptable(
-            final HttpMediaTypeNotAcceptableException exception,
-            final HttpServletRequest request) {
-        return "acceptable data type:" + MediaType.APPLICATION_JSON_VALUE + " or " + MediaType.APPLICATION_XML_VALUE;
-    }
-//    @ExceptionHandler(value = AccessDeniedException.class)
-//    public void handleConflict(HttpServletResponse response) throws IOException {
-//        response.sendError(403, "Your Message");
+//    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
+//    @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
+//    @ResponseBody
+//    public String handleMediaTypeNotAcceptable(
+//            final HttpMediaTypeNotAcceptableException exception,
+//            final HttpServletRequest request) {
+//        return "acceptable data type:" + MediaType.APPLICATION_JSON_VALUE + " or " + MediaType.APPLICATION_XML_VALUE;
 //    }
+
 
 
 
