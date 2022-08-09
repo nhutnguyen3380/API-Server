@@ -25,5 +25,8 @@ public class WhiteLabelService
     {
         return whiteLabelRepository.findAllWhiteLabelList();
     }
-
+    public int countWhiteLabelList()
+    {
+        return whiteLabelRepository.findAllWhiteLabelList().size();
+    }
 }

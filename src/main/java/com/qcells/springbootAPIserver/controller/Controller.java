@@ -18,6 +18,7 @@ import com.qcells.springbootAPIserver.models.AuthenticationRequest;
 import com.qcells.springbootAPIserver.models.AuthenticationResponse;
 import com.qcells.springbootAPIserver.services.ProductService;
 import com.qcells.springbootAPIserver.services.WhiteLabelService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -97,6 +98,19 @@ public class Controller {
             return ResponseEntity.ok(wList);
         }
     }
+    @RequestMapping(path="/countWhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<Integer> countWhiteLabelList()
+    {
+        return ResponseEntity.ok(whiteLabelService.countWhiteLabelList());
+    }
+    @RequestMapping(path="/countProductsList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity<Integer> countProductsList()
+    {
+        return ResponseEntity.ok(productService.countProductsList());
+    }
+
+
+
     @RequestMapping(path="/productslist", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<ProductsList>> findProductsList()
     {

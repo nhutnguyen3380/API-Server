@@ -53,6 +53,11 @@ public class ProductService {
         return productRepository.findAllProductsList();
     }
 
+    public int countProductsList()
+    {
+        return productRepository.findAllProductsList().size();
+    }
+
 
 //    public Flux<ProductsList> loadProductsListStream()
 //    {
