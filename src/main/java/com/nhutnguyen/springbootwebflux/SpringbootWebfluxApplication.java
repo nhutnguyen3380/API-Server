@@ -8,19 +8,46 @@
 
 package com.nhutnguyen.springbootwebflux;
 
+import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
+import com.nhutnguyen.springbootwebflux.Entity.User;
+import com.nhutnguyen.springbootwebflux.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import javax.annotation.PostConstruct;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+
 @SpringBootApplication
-public class SpringbootWebfluxApplication //implements CommandLineRunner
+public class SpringbootWebfluxApplication implements CommandLineRunner
 	{
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootWebfluxApplication.class, args);
 	}
+	//request feature now
+	@Override
+	public void run(String... args) throws Exception {
+//		List<Item> items = itemRepo.findAll();
+//		items.forEach(System.out :: println);
+//		Mono<String> monoString = Mono.just("This is a test").log();
+//		monoString.subscribe(System.out::println);
+//
+//		Flux<String> fluxString = Flux.just("Dog", "Cat", "LUL").log();
+//		fluxString.subscribe(System.out::println);
 
-//	@Override
-//	public void run(String... args) throws Exception {
-//		//List<Item> items = itemRepo.findAll();
-//		//items.forEach(System.out :: println);
-//	}
+//		List<ProductsList> productsLists = fetchDataService.findAll();
+//		productsLists.forEach(System.out::println);
+
+
+	}
+	private void show(List<ProductsList> productsLists)
+	{
+		productsLists.forEach(System.out::println);
+	}
 }

@@ -6,18 +6,12 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux;
+package com.nhutnguyen.springbootwebflux.services;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Service;
 
-@Controller
-public class HelloResource {
-
-    @RequestMapping("/hello")
-    public String hello()
-    {
-        return "Hello World!";
-    }
+@Service
+public class WhiteLabelService
+{
 
 }
