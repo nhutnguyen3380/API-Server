@@ -46,8 +46,13 @@ public class ProductService {
 
     public List<ProductsList> getProductsList()
     {
-        return productRepository.findAll();
+        return productRepository.findProductsList();
     }
+    public List<ProductsList> getAllProductsList()
+    {
+        return productRepository.findAllProductsList();
+    }
+
 
 //    public Flux<ProductsList> loadProductsListStream()
 //    {

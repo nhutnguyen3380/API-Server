@@ -8,10 +8,22 @@
 
 package com.nhutnguyen.springbootwebflux.services;
 
+import com.nhutnguyen.springbootwebflux.Entity.WhiteLabelList;
+import com.nhutnguyen.springbootwebflux.repository.WhiteLabelRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class WhiteLabelService
 {
+    @Autowired
+    private WhiteLabelRepository whiteLabelRepository;
+
+    public List<WhiteLabelList> getAllWhiteLabelList()
+    {
+        return whiteLabelRepository.findAllWhiteLabelList();
+    }
 
 }

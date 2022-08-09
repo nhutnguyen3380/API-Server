@@ -60,21 +60,44 @@ public class GlobalExceptionHandler {
 //
 //        return new ResponseEntity<>(errorResponse, HttpStatus.METHOD_NOT_ALLOWED);
 //    }
-    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
-    public ResponseEntity<String> handleMediaTypeException(HttpMediaTypeNotAcceptableException httpMediaTypeNotAcceptableException)
-    {
-        return new ResponseEntity<String>("Acceptable data type:" + MediaType.APPLICATION_JSON_VALUE + " or " + MediaType.APPLICATION_XML_VALUE, HttpStatus.NOT_ACCEPTABLE);
-    }
+//    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+//    public ResponseEntity<Map<String,String>> handleMethodNotSupportedException(HttpRequestMethodNotSupportedException httpRequestMethodNotSupportedException)
+//    {
+//        Map<String,String> errorResponse = new HashMap<>();
+//        String error = "Hi";
+//        errorResponse.put("error", error);
+//        errorResponse.put("message", httpRequestMethodNotSupportedException.getLocalizedMessage());
+//        errorResponse.put("status", HttpStatus.METHOD_NOT_ALLOWED.toString());
+//        return new ResponseEntity<>(errorResponse, HttpStatus.METHOD_NOT_ALLOWED);
+//    }
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<String> handleMethodNotSupportedException(HttpRequestMethodNotSupportedException httpRequestMethodNotSupportedException)
     {
-        return new ResponseEntity<String>("Method not supported", HttpStatus.METHOD_NOT_ALLOWED);
+        String error = httpRequestMethodNotSupportedException.getMethod() + " is not one of the supported HTTP methods";
+        return new ResponseEntity<String>("Error: " + error + "\nMessage: " + httpRequestMethodNotSupportedException.getLocalizedMessage() + "\nStatus: " + HttpStatus.METHOD_NOT_ALLOWED.toString(), HttpStatus.METHOD_NOT_ALLOWED);
     }
-    @ExceptionHandler(AccessDeniedException.class)
-    public ResponseEntity<String> handleAccessDeniedException(AccessDeniedException accessDeniedException)
+    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
+    public ResponseEntity<String> handleMediaTypeException(HttpMediaTypeNotAcceptableException httpMediaTypeNotAcceptableException)
     {
-        return new ResponseEntity<String>("Access denied", HttpStatus.UNAUTHORIZED);
+        String error = "Unsupported data types";
+        return new ResponseEntity<String>("Error: " + error + "\nMessage: " + httpMediaTypeNotAcceptableException.getLocalizedMessage() + "\nStatus: " + HttpStatus.NOT_ACCEPTABLE.toString(), HttpStatus.NOT_ACCEPTABLE);
     }
+
+
+//    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
+//    public ResponseEntity<Map<String,String>> handleMediaTypeException(HttpMediaTypeNotAcceptableException httpMediaTypeNotAcceptableException)
+//    {
+//        Map<String, String> errorResponse2 = new HashMap<>();
+//        System.out.println("H!!!!!!!!!!i");
+//        String error2 = "Hi";
+//        errorResponse2.put("error", error2);
+//        errorResponse2.put("message", httpMediaTypeNotAcceptableException.getLocalizedMessage());
+//        errorResponse2.put("status", HttpStatus.NOT_ACCEPTABLE.toString());
+//        return new ResponseEntity<>(errorResponse2, HttpStatus.NOT_ACCEPTABLE);
+//    }
+
+
+
 
 //    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
 //    @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)

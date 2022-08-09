@@ -19,6 +19,7 @@ import com.nhutnguyen.springbootwebflux.repository.WhiteLabelRepository;
 import com.nhutnguyen.springbootwebflux.models.AuthenticationRequest;
 import com.nhutnguyen.springbootwebflux.models.AuthenticationResponse;
 import com.nhutnguyen.springbootwebflux.services.ProductService;
+import com.nhutnguyen.springbootwebflux.services.WhiteLabelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -44,6 +45,9 @@ public class Controller {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private WhiteLabelService whiteLabelService;
 
     @Autowired
     private JwtUtil jwtTokenUtil;
@@ -110,12 +114,12 @@ public class Controller {
     @RequestMapping(path="/allProductsList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<ProductsList>> findAllProductsList()
     {
-        return ResponseEntity.ok(productRepository.findAllProductsList());
+        return ResponseEntity.ok(productService.getAllProductsList());
     }
     @RequestMapping(path="/allWhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<WhiteLabelList>> findAllWhiteLabelList()
     {
-        List<WhiteLabelList> wList = whiteLabelRepository.findAllWhiteLabelList();
+        List<WhiteLabelList> wList = whiteLabelService.getAllWhiteLabelList();
         if(wList.isEmpty())
         {
             throw new NoDataFoundException();
@@ -128,8 +132,7 @@ public class Controller {
     @RequestMapping(path="/productslist", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<ProductsList>> findProductsList()
     {
-        return ResponseEntity.ok(productRepository.findProductsList());
-
+        return ResponseEntity.ok(productService.getProductsList());
     }
 
     @RequestMapping(path="/findProductsListByItemCode/{ITEM_NO}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
