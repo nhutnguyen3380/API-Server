@@ -6,10 +6,10 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.services;
+package com.qcells.springbootAPIserver.services;
 
-import com.nhutnguyen.springbootwebflux.Entity.WhiteLabelList;
-import com.nhutnguyen.springbootwebflux.repository.WhiteLabelRepository;
+import com.qcells.springbootAPIserver.Entity.WhiteLabelList;
+import com.qcells.springbootAPIserver.repository.WhiteLabelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

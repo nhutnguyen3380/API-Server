@@ -6,10 +6,10 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.filters;
+package com.qcells.springbootAPIserver.filters;
 
-import com.nhutnguyen.springbootwebflux.JwtUtil;
-import com.nhutnguyen.springbootwebflux.services.MyUserDetailsService;
+import com.qcells.springbootAPIserver.JwtUtil;
+import com.qcells.springbootAPIserver.services.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

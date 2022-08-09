@@ -6,18 +6,11 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.Entity;
+package com.qcells.springbootAPIserver;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Product {
-
-    private int id;
-    private String name;
-
+public class NoDataFoundException extends RuntimeException {
+    public NoDataFoundException()
+    {
+        super("No data found");
+    }
 }

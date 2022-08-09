@@ -6,10 +6,9 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.dao;
+package com.qcells.springbootAPIserver.dao;
 
-import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
-import com.nhutnguyen.springbootwebflux.Entity.Product;
+import com.qcells.springbootAPIserver.Entity.Product;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 

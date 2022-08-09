@@ -6,13 +6,12 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.repository;
+package com.qcells.springbootAPIserver.repository;
 
-import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
+import com.qcells.springbootAPIserver.Entity.ProductsList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

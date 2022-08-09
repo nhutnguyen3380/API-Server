@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.services;
+package com.qcells.springbootAPIserver.services;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.User;

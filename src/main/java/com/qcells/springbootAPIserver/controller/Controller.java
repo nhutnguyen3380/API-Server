@@ -6,18 +6,18 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.controller;
+package com.qcells.springbootAPIserver.controller;
 
-import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
-import com.nhutnguyen.springbootwebflux.Entity.WhiteLabelList;
-import com.nhutnguyen.springbootwebflux.NoDataFoundException;
-import com.nhutnguyen.springbootwebflux.JwtUtil;
-import com.nhutnguyen.springbootwebflux.repository.ProductRepository;
-import com.nhutnguyen.springbootwebflux.repository.WhiteLabelRepository;
-import com.nhutnguyen.springbootwebflux.models.AuthenticationRequest;
-import com.nhutnguyen.springbootwebflux.models.AuthenticationResponse;
-import com.nhutnguyen.springbootwebflux.services.ProductService;
-import com.nhutnguyen.springbootwebflux.services.WhiteLabelService;
+import com.qcells.springbootAPIserver.Entity.ProductsList;
+import com.qcells.springbootAPIserver.Entity.WhiteLabelList;
+import com.qcells.springbootAPIserver.NoDataFoundException;
+import com.qcells.springbootAPIserver.JwtUtil;
+import com.qcells.springbootAPIserver.repository.ProductRepository;
+import com.qcells.springbootAPIserver.repository.WhiteLabelRepository;
+import com.qcells.springbootAPIserver.models.AuthenticationRequest;
+import com.qcells.springbootAPIserver.models.AuthenticationResponse;
+import com.qcells.springbootAPIserver.services.ProductService;
+import com.qcells.springbootAPIserver.services.WhiteLabelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

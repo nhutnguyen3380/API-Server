@@ -8,10 +8,10 @@
 		<version>2.7.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.nhutnguyen</groupId>
-	<artifactId>springboot-webflux</artifactId>
+	<groupId>com.qcells</groupId>
+	<artifactId>springbootAPIserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-webflux</name>
+	<name>springbootAPIserver</name>
 	<description>Spring Boot Webflux API Server</description>
 	<properties>
 		<java.version>17</java.version>

@@ -6,11 +6,19 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux;
+package com.qcells.springbootAPIserver.models;
 
-public class NoDataFoundException extends RuntimeException {
-    public NoDataFoundException()
+import java.io.Serializable;
+
+public class AuthenticationResponse {
+    private final String jwt;
+
+    public AuthenticationResponse(String jwt)
     {
-        super("No data found");
+        this.jwt = jwt;
+    }
+    public String getJwt()
+    {
+        return jwt;
     }
 }

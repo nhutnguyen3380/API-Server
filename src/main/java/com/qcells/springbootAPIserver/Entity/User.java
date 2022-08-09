@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.Entity;
+package com.qcells.springbootAPIserver.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

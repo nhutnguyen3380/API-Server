@@ -6,19 +6,18 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.models;
+package com.qcells.springbootAPIserver.Entity;
 
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class AuthenticationResponse {
-    private final String jwt;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Product {
 
-    public AuthenticationResponse(String jwt)
-    {
-        this.jwt = jwt;
-    }
-    public String getJwt()
-    {
-        return jwt;
-    }
+    private int id;
+    private String name;
+
 }

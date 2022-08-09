@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.models;
+package com.qcells.springbootAPIserver.models;
 
 public class AuthenticationRequest {
     private String username;

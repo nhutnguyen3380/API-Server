@@ -6,9 +6,9 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.repository;
+package com.qcells.springbootAPIserver.repository;
 
-import com.nhutnguyen.springbootwebflux.Entity.User;
+import com.qcells.springbootAPIserver.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Integer> {

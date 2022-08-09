@@ -6,12 +6,12 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.services;
+package com.qcells.springbootAPIserver.services;
 
-import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
-import com.nhutnguyen.springbootwebflux.repository.ProductRepository;
-import com.nhutnguyen.springbootwebflux.dao.ProductDao;
-import com.nhutnguyen.springbootwebflux.Entity.Product;
+import com.qcells.springbootAPIserver.Entity.ProductsList;
+import com.qcells.springbootAPIserver.repository.ProductRepository;
+import com.qcells.springbootAPIserver.dao.ProductDao;
+import com.qcells.springbootAPIserver.Entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

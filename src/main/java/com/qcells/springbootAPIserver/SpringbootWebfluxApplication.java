@@ -6,20 +6,14 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux;
+package com.qcells.springbootAPIserver;
 
-import com.nhutnguyen.springbootwebflux.Entity.ProductsList;
-import com.nhutnguyen.springbootwebflux.Entity.User;
-import com.nhutnguyen.springbootwebflux.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.qcells.springbootAPIserver.Entity.ProductsList;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 @SpringBootApplication

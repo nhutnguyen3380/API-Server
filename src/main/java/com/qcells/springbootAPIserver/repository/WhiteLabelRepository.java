@@ -6,9 +6,9 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.nhutnguyen.springbootwebflux.repository;
+package com.qcells.springbootAPIserver.repository;
 
-import com.nhutnguyen.springbootwebflux.Entity.WhiteLabelList;
+import com.qcells.springbootAPIserver.Entity.WhiteLabelList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
