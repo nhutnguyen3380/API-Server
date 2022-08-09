@@ -39,18 +39,6 @@ public class JwtUtil {
     }
     private Claims extractAllClaims(String token) {
         return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
-//        try {
-//            // Get Claims from valid token
-//            return Jwts.parser()
-//                    .setSigningKey(SECRET_KEY)
-//                    .parseClaimsJws(token)
-//                    .getBody();
-//
-//        } catch (ExpiredJwtException e) {
-//            // Get Claims from expired token
-//            System.out.println("ERROR HEREEEEEEEEEEEEEE");
-//            return e.getClaims();
-//        }
     }
 
     private Boolean isTokenExpired(String token)

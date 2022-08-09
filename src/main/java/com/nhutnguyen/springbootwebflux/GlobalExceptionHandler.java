@@ -34,42 +34,12 @@ public class GlobalExceptionHandler {
 
 
     @ExceptionHandler(NoDataFoundException.class)
-    public ResponseEntity<Object> handleNoDataFoundException(
-            NoDataFoundException ex, WebRequest request
-    )
+    public ResponseEntity<String> handleNoDataFoundException(
+            NoDataFoundException noDataFoundException, WebRequest request)
     {
-        Map<String, Object> body = new LinkedHashMap<>();
-        body.put("timestamp", LocalDateTime.now());
-        body.put("message", "No data found");
-
-        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<String>("Error: " + "\nMessage: " + noDataFoundException.getLocalizedMessage() + "\nStatus: Error", HttpStatus.NO_CONTENT);
     }
 
-//    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-//    public ResponseEntity<Map<String, String>> handleException(
-//            HttpRequestMethodNotSupportedException e) throws IOException {
-//        Map<String, String> errorResponse = new HashMap<>();
-//        String provided = e.getMethod();
-//        List<String> supported = Arrays.asList(e.getSupportedMethods());
-//
-//        String error = provided + " is not one of the supported Http Methods (" +
-//                String.join(", ", supported) + ")";
-//        errorResponse.put("error", error);
-//        errorResponse.put("message", e.getLocalizedMessage());
-//        errorResponse.put("status", HttpStatus.METHOD_NOT_ALLOWED.toString());
-//
-//        return new ResponseEntity<>(errorResponse, HttpStatus.METHOD_NOT_ALLOWED);
-//    }
-//    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-//    public ResponseEntity<Map<String,String>> handleMethodNotSupportedException(HttpRequestMethodNotSupportedException httpRequestMethodNotSupportedException)
-//    {
-//        Map<String,String> errorResponse = new HashMap<>();
-//        String error = "Hi";
-//        errorResponse.put("error", error);
-//        errorResponse.put("message", httpRequestMethodNotSupportedException.getLocalizedMessage());
-//        errorResponse.put("status", HttpStatus.METHOD_NOT_ALLOWED.toString());
-//        return new ResponseEntity<>(errorResponse, HttpStatus.METHOD_NOT_ALLOWED);
-//    }
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<String> handleMethodNotSupportedException(HttpRequestMethodNotSupportedException httpRequestMethodNotSupportedException)
     {
@@ -82,35 +52,6 @@ public class GlobalExceptionHandler {
         String error = "Unsupported data types";
         return new ResponseEntity<String>("Error: " + error + "\nMessage: " + httpMediaTypeNotAcceptableException.getLocalizedMessage() + "\nStatus: " + HttpStatus.NOT_ACCEPTABLE.toString(), HttpStatus.NOT_ACCEPTABLE);
     }
-
-
-//    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
-//    public ResponseEntity<Map<String,String>> handleMediaTypeException(HttpMediaTypeNotAcceptableException httpMediaTypeNotAcceptableException)
-//    {
-//        Map<String, String> errorResponse2 = new HashMap<>();
-//        System.out.println("H!!!!!!!!!!i");
-//        String error2 = "Hi";
-//        errorResponse2.put("error", error2);
-//        errorResponse2.put("message", httpMediaTypeNotAcceptableException.getLocalizedMessage());
-//        errorResponse2.put("status", HttpStatus.NOT_ACCEPTABLE.toString());
-//        return new ResponseEntity<>(errorResponse2, HttpStatus.NOT_ACCEPTABLE);
-//    }
-
-
-
-
-//    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
-//    @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
-//    @ResponseBody
-//    public String handleMediaTypeNotAcceptable(
-//            final HttpMediaTypeNotAcceptableException exception,
-//            final HttpServletRequest request) {
-//        return "acceptable data type:" + MediaType.APPLICATION_JSON_VALUE + " or " + MediaType.APPLICATION_XML_VALUE;
-//    }
-
-
-
-
 
 
 
