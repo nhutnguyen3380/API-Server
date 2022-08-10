@@ -15,6 +15,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/*
+ JPA repository of White Label List used for managing data, has several built in methods for accessing data, deleting data, etc.
+    SQL queries are handled
+ */
+
 @Repository
 public interface WhiteLabelRepository extends JpaRepository <WhiteLabelList, String>
 {

@@ -11,6 +11,11 @@ package com.qcells.springbootAPIserver.Entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+/*
+    JPA entity that maps TB_ITEM table from QCELLS. Provides Object Relational Mapping that allows
+    access, manage, and persist between Java object and relational database.
+
+ */
 @Entity
 @Table(name = "TB_ITEM")
 public class ProductsList {

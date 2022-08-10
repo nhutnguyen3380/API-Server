@@ -31,6 +31,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/*
+    Main controller class with the URL paths
+ */
 
 @RestController
 public class Controller {
@@ -38,7 +41,6 @@ public class Controller {
     private AuthenticationManager authenticationManager;
     @Autowired
     private UserDetailsService userDetailsService;
-
 
     @Autowired
     private ProductService productService;
@@ -56,6 +58,7 @@ public class Controller {
     private WhiteLabelRepository whiteLabelRepository;
 
 
+    // Authenticate POST method to authorize user access to the API server
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
         try {
@@ -73,18 +76,13 @@ public class Controller {
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
     }
 
-
-    @GetMapping("/whitelabel")
-    public List<WhiteLabelList> getWhiteLabelList()
-    {
-        return whiteLabelRepository.findAll();
-    }
-
+    // First QSP Query. GET request returns products list data from the QCELLS database
     @RequestMapping(path="/allProductsList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<ProductsList>> findAllProductsList()
     {
         return ResponseEntity.ok(productService.getAllProductsList());
     }
+    // Second QSP query. GET request returns the white label list data from the QCELLS database
     @RequestMapping(path="/allWhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<WhiteLabelList>> findAllWhiteLabelList()
     {
@@ -98,11 +96,15 @@ public class Controller {
             return ResponseEntity.ok(wList);
         }
     }
+
+
+    // GET method for counting the number of objects
     @RequestMapping(path="/countWhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Integer> countWhiteLabelList()
     {
         return ResponseEntity.ok(whiteLabelService.countWhiteLabelList());
     }
+    // GET method for counting the number of objects
     @RequestMapping(path="/countProductsList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Integer> countProductsList()
     {
@@ -110,6 +112,13 @@ public class Controller {
     }
 
 
+    // Unfiltered white label list, has NULL values
+    @RequestMapping(path = "/whitelabel", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE} )
+    public List<WhiteLabelList> getWhiteLabelList()
+    {
+        return whiteLabelRepository.findAll();
+    }
+    // Filtered product list with NO NULL values
 
     @RequestMapping(path="/productslist", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<ProductsList>> findProductsList()
@@ -117,6 +126,7 @@ public class Controller {
         return ResponseEntity.ok(productService.getProductsList());
     }
 
+    //Find products list by ITEM NO
     @RequestMapping(path="/findProductsListByItemCode/{ITEM_NO}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public List<ProductsList> findProductsListByItemCode(@PathVariable String ItemCode)
     {

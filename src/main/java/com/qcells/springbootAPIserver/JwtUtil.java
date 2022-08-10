@@ -20,6 +20,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+/*
+    Utility class to create JWT token
+ */
 @Service
 public class JwtUtil {
     private String SECRET_KEY = "secret";

@@ -19,6 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+/*
+Service used to retrieve username and password
+ */
+
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 

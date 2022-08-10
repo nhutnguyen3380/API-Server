@@ -15,6 +15,9 @@ import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 
+/*
+    Controller class to handle global exceptions, such as method not supported, data type not supported, and more
+ */
 @ControllerAdvice
 public class GlobalExceptionHandler {
 

@@ -15,6 +15,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/*
+Service class for White Label List
+ */
+
 @Service
 public class WhiteLabelService
 {

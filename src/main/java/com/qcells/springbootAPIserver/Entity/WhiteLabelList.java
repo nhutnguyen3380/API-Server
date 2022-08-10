@@ -10,6 +10,11 @@ package com.qcells.springbootAPIserver.Entity;
 
 import javax.persistence.*;
 
+/*/
+      JPA entity that maps TB_ITEM table from QCELLS. Provides Object Relational Mapping that allows
+    access, manage, and persist between Java object and relational database.
+ */
+
 @Entity
 @Table(name = "TB_CMMNCODE")
 

@@ -16,6 +16,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/*
+    JPA repository of the Products List used for managing data, has several built in methods for accessing data, deleting data, etc.
+    SQL queries are handled
+
+ */
+
 @Repository
 public interface ProductRepository extends JpaRepository<ProductsList, String> {
 

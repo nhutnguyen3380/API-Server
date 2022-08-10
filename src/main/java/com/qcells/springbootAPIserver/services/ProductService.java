@@ -8,16 +8,20 @@
 
 package com.qcells.springbootAPIserver.services;
 
+import com.qcells.springbootAPIserver.Entity.Product;
 import com.qcells.springbootAPIserver.Entity.ProductsList;
 import com.qcells.springbootAPIserver.repository.ProductRepository;
 import com.qcells.springbootAPIserver.dao.ProductDao;
-import com.qcells.springbootAPIserver.Entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 import java.util.List;
 
+/*
+    Service class for Products List
+
+ */
 @Service
 public class ProductService {
 
