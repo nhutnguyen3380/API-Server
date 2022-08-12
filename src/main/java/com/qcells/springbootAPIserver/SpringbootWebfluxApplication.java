@@ -29,21 +29,7 @@ public class SpringbootWebfluxApplication implements CommandLineRunner
 	//request feature now
 	@Override
 	public void run(String... args) throws Exception {
-//		List<Item> items = itemRepo.findAll();
-//		items.forEach(System.out :: println);
-//		Mono<String> monoString = Mono.just("This is a test").log();
-//		monoString.subscribe(System.out::println);
-//
-//		Flux<String> fluxString = Flux.just("Dog", "Cat", "LUL").log();
-//		fluxString.subscribe(System.out::println);
-
-//		List<ProductsList> productsLists = fetchDataService.findAll();
-//		productsLists.forEach(System.out::println);
-
 
 	}
-	private void show(List<ProductsList> productsLists)
-	{
-		productsLists.forEach(System.out::println);
-	}
+
 }
