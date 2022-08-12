@@ -1,29 +1,24 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### QCELLS API Server Project ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* The project is an API server that helps communicate data between third parties and QSP database. This application will help with the request and retrieval of data from the database safely and securely. Information such as the products list and the white label list that contains product name, itemcode, wattage, and such are accessible. This application is available to third party clients to use to request data without direct access to the database. The API helps with management, security, and processing of data.
+* 1.0
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Clone project to local repository using an IDE of preference. Dependencies will automatically be installed.
+* Configure JPA Hibernate with MSSQL.
+* Spring boot, Maven, JPA, Swagger UI
+* Database is configured to the QSP database, initialize a local repository of QSP database.
+* API testing using Postman
 
 ### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+* QCELLS Internship project
+* For code development, contact QCELLS
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* QCELLS website: https://qcells.com/us/
