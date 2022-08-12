@@ -78,13 +78,13 @@ public class Controller {
     }
 
     // First QSP Query. GET request returns products list data from the QCELLS database
-    @RequestMapping(path="/allProductsList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    @RequestMapping(path="/ProductsList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<ProductsList>> findAllProductsList()
     {
         return ResponseEntity.ok(productService.getAllProductsList());
     }
     // Second QSP query. GET request returns the white label list data from the QCELLS database
-    @RequestMapping(path="/allWhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    @RequestMapping(path="/WhiteLabelList", method=RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<WhiteLabelList>> findAllWhiteLabelList()
     {
         List<WhiteLabelList> wList = whiteLabelService.getAllWhiteLabelList();
@@ -114,14 +114,14 @@ public class Controller {
 
 
     // Unfiltered white label list, has NULL values
-    @RequestMapping(path = "/whitelabel", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE} )
+    @RequestMapping(path = "/allWhiteLabelList", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE} )
     public List<WhiteLabelList> getWhiteLabelList()
     {
         return whiteLabelRepository.findAll();
     }
     // Filtered product list with NO NULL values
 
-    @RequestMapping(path="/productslist", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    @RequestMapping(path="/allProductsList", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<List<ProductsList>> findProductsList()
     {
         return ResponseEntity.ok(productService.getProductsList());
